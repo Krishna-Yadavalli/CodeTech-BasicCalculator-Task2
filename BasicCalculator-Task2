@@ -1,0 +1,60 @@
+#SampleBasicCalculator-Task2
+
+package com.SampleCalculator.calculator;
+import java.util.Scanner;
+public class Calculator
+{
+
+	public static void main(String[] args)
+	{
+		//Taking data from keyboard
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Given below basic calculator operations!"); 
+		
+		//These are the basic operations
+		System.out.println("1- (+) Addition"); 
+		System.out.println("2- (-) Subtraction");
+		System.out.println("3- (*) Multiplication");
+		System.out.println("4- (/) Division");
+		
+		//selecting the operator to perform task
+		System.out.println("Select the above operators to perform task:"); 
+		int operator=sc.nextInt();
+		
+		//Entering the first number 
+		System.out.println("Enter the first number :"); 
+		double num1=sc.nextDouble();
+		
+		//Entering the second number 
+		System.out.println("Enter the first number :"); 
+		double num2=sc.nextDouble();
+		
+		double result=0;
+		
+		//using switch to perform basic operations
+		switch(operator)
+		{
+			case 1:
+				result=num1 + num2;
+				break;
+			case 2:
+				result=num1 - num2;
+				break;
+			case 3:
+				result=num1 * num2;
+				break;
+			case 4:
+				 if (num2 != 0) {
+	                    result = num1 / num2;
+	                } else {
+	                    System.out.println("Arithmetic Exception! Division by zero.");
+	                    break;
+	                }
+	        default :
+				  System.out.println("Invalid Operator...!!!");	
+				 
+		}
+		System.out.println("Result :" +result); 
+	}
+}
